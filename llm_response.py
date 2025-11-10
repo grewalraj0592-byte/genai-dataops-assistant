@@ -2,7 +2,7 @@ from openai import OpenAI
 from embedding_store import create_vector_store
 
 def generate_llm_response(query_text):
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key="OPENAI_API_KEY")
     collection = create_vector_store()
     results = collection.query(query_texts=[query_text], n_results=3)
     context = "\n\n".join(results["documents"][0])
